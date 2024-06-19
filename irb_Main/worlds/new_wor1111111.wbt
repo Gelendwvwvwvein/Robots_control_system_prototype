@@ -1,0 +1,145 @@
+#VRML_SIM R2023b utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/floors/protos/RectangleArena.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/robots/abb/irb/protos/Irb4600-40.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/appearances/protos/BrushedAluminium.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/tables/protos/Table.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/appearances/protos/Parquetry.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/devices/robotiq/protos/Robotiq2f85Gripper.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/tables/protos/Desk.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/chairs/protos/WoodenChair.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/factory/containers/protos/PlasticFruitBox.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/kitchen/breakfast/protos/BiscuitBox.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/solids/protos/SolidBox.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/robots/gctronic/e-puck/protos/E-puck.proto"
+EXTERNPROTO "../protos/Apple.proto"
+
+WorldInfo {
+}
+Viewpoint {
+  orientation -0.33212005339976364 0.09467092291263057 0.9384741266996169 2.4852705096566994
+  position -1.8311495587422844 -3.0856601638956453 4.4146906229450495
+  followType "None"
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+  translation -6.3 0 0
+  floorSize 20 20
+  floorTileSize 5 5
+  floorAppearance Parquetry {
+    type "chequered"
+    textureTransform TextureTransform {
+    }
+  }
+  wallAppearance BrushedAluminium {
+    colorOverride 0.52549 0.368627 0.235294
+  }
+}
+Apple {
+  translation -5.12 -1.39 0.757267
+}
+BiscuitBox {
+  translation -5.97 -1.33 0.01
+}
+PlasticFruitBox {
+  translation -6.2 -1.24 -0.02
+}
+Desk {
+  translation -4.93 -1.24 0
+  rotation 0 0 1 1.5708
+}
+WoodenChair {
+  translation -3.86734 -1.20794 -0.07
+  rotation 0 0 1 -2.8797953071795863
+}
+Irb4600-40 {
+  translation -4.84 0 0.74
+  rotation 0 0 1 -1.5708
+  supervisor TRUE
+  handSlot [
+    Group {
+      children [
+        Slot {
+          type "slot+"
+          endPoint Slot {
+            endPoint Robotiq2f85Gripper {
+              translation 0 0 -0.08
+            }
+          }
+        }
+        Slot {
+          type "slot+"
+          endPoint Slot {
+            endPoint Pen {
+            }
+          }
+        }
+      ]
+    }
+  ]
+  staticBase TRUE
+}
+Table {
+  translation -5.03 1.02 0
+  size 3 3 0.74
+}
+SolidBox {
+  translation -4.63 -1.44 0.735
+  size 0.04 0.05 0.05
+  physics Physics {
+    mass 0.0001
+  }
+}
+E-puck {
+  rotation 0 0 1 1.5708
+  controller "Table_updating"
+  supervisor TRUE
+  groundSensorsSlot [
+    Camera {
+      translation -0.89 5.01999 4.5
+      rotation -5.17014e-07 1 4.97834e-07 1.5708
+      name "camera_2"
+      width 1280
+      height 1280
+      near 0.02
+    }
+    Camera {
+      translation -5.47 5.10999 1.41
+      rotation -0.018896108553928162 -9.897504480422099e-09 0.9998214526011723 1.01503e-06
+      name "camera_1"
+      width 1280
+      height 1280
+      near 0.02
+    }
+  ]
+}
+E-puck {
+  translation 0.1 0 0.1
+  rotation 0 0 1 1.5708
+  name "e-puck(1)"
+  controller "my_controller_camera"
+  supervisor TRUE
+  groundSensorsSlot [
+    Camera {
+      translation -0.89 5.01999 4.5
+      rotation -5.17014e-07 1 4.97834e-07 1.5708
+      name "camera_2"
+      width 1280
+      height 1280
+      near 0.02
+    }
+    Camera {
+      translation -5.47 5.10999 1.41
+      rotation -0.018896108553928162 -9.897504480422099e-09 0.9998214526011723 1.01503e-06
+      name "camera_1"
+      width 1280
+      height 1280
+      near 0.02
+    }
+  ]
+}
