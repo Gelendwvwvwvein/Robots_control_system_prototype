@@ -3,4 +3,6 @@ The project implements a prototype of a functionally universal robot manipulator
 
 The system is developed using Ubuntu 22.04, Python 3.10.12, Webots version R2023b, and LibreOffice calc.
 
+<img src='Control_system/Цыгикало_А_Е ВКР.png'>
+
 <h2>Initialization</h2>
